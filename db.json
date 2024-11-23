@@ -1,0 +1,102 @@
+{
+  "gurus": [
+    {
+      "nama": "Na Jemin",
+      "mapel": "PJOK",
+      "nik": "8753476",
+      "gender": "Laki-laki",
+      "jabatan": "Kepala Sekolah",
+      "id": "1"
+    },
+    {
+      "id": "2",
+      "nama": "Lee Jeno ",
+      "mapel": "Bahasa Indonesia",
+      "nik": "346546543",
+      "gender": "Laki-Laki",
+      "jabatan": "Guru Tetap"
+    },
+    {
+      "nama": "Mark Lee",
+      "mapel": "Bahasa Jawa",
+      "nik": "43645325",
+      "gender": "Laki-laki",
+      "jabatan": "Guru Honorer",
+      "id": "3"
+    },
+    {
+      "nama": "Kim Minjeong",
+      "mapel": "Bahasa Korea",
+      "nik": "879795576",
+      "gender": "Perempuan",
+      "jabatan": "Guru Honorer",
+      "id": "4"
+    },
+    {
+      "id": "5",
+      "nama": "Yoo Jimin ",
+      "mapel": "Seni Budaya",
+      "nik": "457456784",
+      "gender": "Perempuan",
+      "jabatan": "Guru Tetap"
+    },
+    {
+      "id": "6",
+      "nama": "Ning Ning",
+      "mapel": "Bahasa Mandarin",
+      "nik": "83764876",
+      "gender": "Perempuan",
+      "jabatan": "Guru Honorer"
+    }
+  ],
+  "murids": [
+    {
+      "id": "2",
+      "nama": "Faiqah Nisa Azzahra",
+      "kelas": "X",
+      "jurusan": "TKJ",
+      "nisn": "438765387",
+      "asalSekolah": "MTS Boyolali"
+    },
+    {
+      "id": "3",
+      "nama": "Mihnatun Naja Fuadah",
+      "kelas": "X",
+      "jurusan": "TKJ",
+      "nisn": "834765267",
+      "asalSekolah": "MTSN Grobogan"
+    },
+    {
+      "nama": "Eka Yuni Rahmawati",
+      "kelas": "X",
+      "jurusan": "TKJ",
+      "nisn": "67854788",
+      "asalSekolah": "MTS Gaji",
+      "id": "4"
+    },
+    {
+      "id": "6",
+      "nama": "Zulfa Azzahra",
+      "kelas": "X",
+      "jurusan": "IPA",
+      "nisn": "23654726",
+      "asalSekolah": "SMP Karangasem"
+    },
+    {
+      "id": "aa68",
+      "nama": "Rodiyatul Khofifah",
+      "kelas": "X",
+      "jurusan": "TKJ",
+      "nisn": "847658375",
+      "asalSekolah": "SMP Karangasem"
+    },
+    {
+      "id": "b69c",
+      "nama": "Devi Mahya Kumila",
+      "kelas": "X",
+      "jurusan": "TKJ",
+      "nisn": "43645646",
+      "asalSekolah": "MTS Grobogan"
+    }
+  ]
+}
