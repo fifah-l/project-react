@@ -1,105 +1,179 @@
-/* Sidebar basic styling */
 .sidebar {
-  width: 250px;
-  height: 100vh;
-  background-color: #80C7FF; /* Lighter background color */
-  position: fixed;
-  left: 0;
-  top: 0;
-  transition: transform 0.3s ease;
-  z-index: 100;
-  color: #004d40; /* Dark green text color */
-  padding-top: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border-right: 5px solid #00796b; /* Lighter border for a modern feel */
-}
-
-.sidebar-header {
-  text-align: center;
-  padding: 0 15px;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #004d40; /* Dark green text for header */
-}
-
-.sidebar-nav {
-  flex-grow: 1;
-}
-
-.sidebar-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.sidebar-nav li {
-  margin: 15px 0;
-}
-
-.sidebar-link {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: #004d40; /* Dark green text color */
-  padding: 10px 20px;
-  border-radius: 5px; /* Rounded corners for the links */
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.sidebar-link:hover {
-  background-color: #26c6da; /* Lighter blue when hovered */
-  color: white; /* White text on hover */
-}
-
-.sidebar-icon {
-  margin-right: 15px;
-  font-size: 1.3rem;
-}
-
-/* Toggle button for mobile view */
-.sidebar-toggle {
-  display: none;
-  font-size: 2rem;
-  color: #004d40; /* Dark green toggle icon */
-  cursor: pointer;
-}
-
-/* For larger screens, sidebar is always visible */
-@media (min-width: 768px) {
-  .sidebar {
-    transform: none; /* Sidebar is fully expanded */
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    background-color: #83b8e9;
+    color: white;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(-100%);
   }
-
+  
+  .sidebar.open {
+    transform: translateX(0);
+  }
+  
+  .sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #83b8e9;
+  }
+  
+  .sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar-nav li {
+    margin: 15px 0;
+  }
+  
+  .sidebar-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    transition: background-color 0.3s;
+  }
+  
+  .sidebar-link:hover {
+    background-color: #83b8e9;
+  }
+  
+  .sidebar-icon {
+    margin-right: 10px;
+  }
+  
   .sidebar-toggle {
+    cursor: pointer;
+    color: white;
+  }
+  
+  .sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
     display: none;
   }
-
-  .sidebar-header {
-    text-align: center;
-    padding: 0 20px;
-    color: #004d40; /* Dark green text for header */
+  
+  .sidebar-overlay.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999; /* Pastikan ini tidak menutupi sidebar */
   }
-}
-
-/* For mobile devices, sidebar will be hidden by default */
-@media (max-width: 768px) {
-  .sidebar {
-    transform: translateX(-100%); /* Sidebar off-screen by default */
+  
+  
+  /* Tombol untuk membuka sidebar */
+.open-sidebar-button {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    background-color: #83b8e9;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-
-  .sidebar.open {
-    transform: translateX(0); /* Sidebar slides in */
+  
+  .open-sidebar-button:hover {
+    background-color: #83b8e9;
   }
-
-  .sidebar-toggle {
-    display: block;
-    margin-left: auto;
+  
+  /* Tombol untuk menutup sidebar */
+  .close-sidebar-button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
   }
-
+  
+  .close-sidebar-button:hover {
+    color: #bdc3c7;
+  }
+  
+  /* Untuk container Sidebar secara keseluruhan */
+.sidebar {
+    /* Tambahkan padding untuk memberi ruang di dalam sidebar */
+    padding-top: 50px;
+  }
+  
+ /* Gaya untuk Menu Item */
+.sidebar-header h5 {
+    font-size: 1.5rem; /* Ukuran font lebih besar */
+    font-weight: bold; /* Membuat teks lebih tebal */
+    color: #e7ecf1; /* Warna teks menonjol (biru lembut, bisa disesuaikan) */
+    text-align: center; /* Teks berada di tengah */
+    margin-bottom: 20px; /* Jarak antara judul dan elemen di bawahnya */
+    text-transform: uppercase; /* Teks dalam huruf kapital semua (opsional) */
+  }
+  
+  /* Untuk daftar navigasi */
+  .sidebar-nav ul {
+    list-style-type: none; /* Menghilangkan bullet points */
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Untuk setiap item navigasi */
+  .sidebar-nav ul li {
+    margin-bottom: 15px; /* Tambahkan margin antara item navigasi */
+  }
+  
+  /* Untuk link di dalam sidebar */
   .sidebar-link {
-    font-size: 1rem;
-    padding: 15px;
+    display: flex; /* Agar ikon dan teks sejajar secara horizontal */
+    align-items: center; /* Ikon dan teks di tengah secara vertikal */
+    text-decoration: none; /* Menghilangkan garis bawah */
+    padding: 10px 0; /* Menambah ruang di sekitar teks */
   }
-}
+  
+  /* Untuk ikon di dalam sidebar */
+  .sidebar-icon {
+    margin-right: 10px; /* Memberi jarak antara ikon dan teks */
+  }
+  
+  /* Untuk link di dalam sidebar */
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px 0;
+    color: #333; /* Warna awal teks */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Tambahkan transisi */
+  }
+  
+  .sidebar-link:hover {
+    color: #fff; /* Warna teks saat hover */
+    background-color: #4A90E2; /* Warna latar belakang saat hover */
+    border-radius: 5px; /* Tambahkan efek membulat */
+  }
+  
+  /* Untuk ikon di dalam sidebar */
+  .sidebar-icon {
+    margin-right: 10px;
+    transition: transform 0.3s ease; /* Transisi pada ikon */
+  }
+  
+  .sidebar-link:hover .sidebar-icon {
+    transform: scale(1.2); /* Membesarkan ikon saat hover */
+  }
+  

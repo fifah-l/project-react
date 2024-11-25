@@ -52,7 +52,7 @@ const TambahMurid = () => {
                 onChange={(e) => setNama(e.target.value)}
                 required
                 variant="outlined"
-                sx={{ backgroundColor: '#fff' }}
+                sx={{ backgroundColor: '#f0f4f8' }}
               />
             </Grid>
             <Grid item xs={12}>
@@ -63,7 +63,7 @@ const TambahMurid = () => {
                 onChange={(e) => setKelas(e.target.value)}
                 required
                 variant="outlined"
-                sx={{ backgroundColor: '#fff' }}
+                sx={{ backgroundColor: '#f0f4f8' }}
               />
             </Grid>
             <Grid item xs={12}>
@@ -74,7 +74,7 @@ const TambahMurid = () => {
                 onChange={(e) => setJurusan(e.target.value)}
                 required
                 variant="outlined"
-                sx={{ backgroundColor: '#fff' }}
+                sx={{ backgroundColor: '#f0f4f8' }}
               />
             </Grid>
             <Grid item xs={12}>
@@ -85,7 +85,7 @@ const TambahMurid = () => {
                 onChange={(e) => setNisn(e.target.value)}
                 required
                 variant="outlined"
-                sx={{ backgroundColor: '#fff' }}
+                sx={{ backgroundColor: '#f0f4f8' }}
               />
             </Grid>
             <Grid item xs={12}>
@@ -96,7 +96,7 @@ const TambahMurid = () => {
                 onChange={(e) => setAsalSekolah(e.target.value)}
                 required
                 variant="outlined"
-                sx={{ backgroundColor: '#fff' }}
+                sx={{ backgroundColor: '#f0f4f8' }}
               />
             </Grid>
             <Grid item xs={12}>
@@ -113,7 +113,7 @@ const TambahMurid = () => {
                   '&:hover': { backgroundColor: '#004d40' },
                 }}
               >
-                Tambah Siswa
+                Tambahkan Siswa
               </Button>
             </Grid>
           </Grid>

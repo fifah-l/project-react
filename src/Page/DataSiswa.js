@@ -10,13 +10,14 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Sidebar from "../components/Sidebar";
 import Swal from 'sweetalert2';
-import { Button, Tooltip, IconButton, Grid } from '@mui/material';
+import { Button, Tooltip, IconButton, TextField } from '@mui/material';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 
 export default function Dashboard() {
   const [murids, setMurids] = useState([]);
+  const [searchQuery, setSearchQuery] = useState('');  // State untuk pencarian
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -63,23 +64,46 @@ export default function Dashboard() {
     });
   };
 
+  // Fungsi untuk memfilter data murid berdasarkan pencarian
+  const filteredMurids = murids.filter(murid => 
+    murid.nama.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    murid.kelas.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    murid.jurusan.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    murid.nisn.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
-    <div style={{ backgroundColor: '#B3E5FC', minHeight: '100vh', padding: '20px', marginLeft: '280px' }}>
+    <div style={{ backgroundColor: '#B3E5FC', minHeight: '100vh', padding: '20px', }}>
       <Sidebar />
       <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
-          <Button
-            variant="contained"
-            color="primary"
-            startIcon={<AddCircleOutlineIcon />}
-            onClick={handleAdd}
-            sx={{
-              backgroundColor: '#00796b', 
-              '&:hover': { backgroundColor: '#004d40' }, 
-            }}
-          >
-            Tambah Siswa
-          </Button>
-          </div>
+        <Button
+          variant="contained"
+          color="primary"
+          startIcon={<AddCircleOutlineIcon />}
+          onClick={handleAdd}
+          sx={{
+            backgroundColor: '#00796b', 
+            '&:hover': { backgroundColor: '#004d40' }, 
+          }}
+        >
+          Tambah Siswa
+        </Button>
+      </div>
+
+      {/* Kolom Pencarian */}
+      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
+        <TextField
+          label="Cari Siswa"
+          variant="outlined"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          sx={{
+            width: '300px',
+            backgroundColor: '#fff',
+            borderRadius: '8px',
+          }}
+        />
+      </div>
 
       <TableContainer component={Paper} sx={{ boxShadow: 3, borderRadius: 2 }}>
         <Table
@@ -118,7 +142,7 @@ export default function Dashboard() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {murids.map((murid, index) => (
+            {filteredMurids.map((murid, index) => (
               <TableRow
                 key={murid.id}
                 sx={{

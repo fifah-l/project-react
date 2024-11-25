@@ -115,7 +115,7 @@ const TambahGuru = () => {
                   fontSize: '1.1rem',
                 }}
               >
-                Tambah Guru
+                Tambahkan Guru
               </Button>
             </Grid>
           </Grid>

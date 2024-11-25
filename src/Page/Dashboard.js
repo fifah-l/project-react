@@ -36,22 +36,33 @@ const Dashboard = () => {
   };
 
   return (
-    <div style={{ padding: '20px', backgroundColor: '#e3f2fd', marginLeft: '280px', minHeight: '100vh' }}>
+    <div style={{
+      padding: '20px',
+      backgroundColor: '#BBDEFB', // Biru pastel untuk latar belakang utama
+      minHeight: '95vh',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      flexDirection: 'column'
+    }}>
+      {/* Heading */}
       <Typography
         variant="h4"
         gutterBottom
         align="center"
-        sx={{ color: '#1e88e5', fontWeight: 'bold', marginBottom: '30px' }}
+        sx={{ color: '#0277BD', fontWeight: 'bold', marginBottom: '30px' }} // Biru soft untuk teks judul
       >
         Selamat Datang Di Dashboard Fifah
       </Typography>
 
-      <Grid container spacing={4}>
+      {/* Grid for Cards */}
+      <Grid container spacing={4} justifyContent="center">
+        {/* Card for Data Guru */}
         <Grid item xs={12} sm={6} md={4}>
           <Card
             sx={{
               minHeight: '200px',
-              backgroundColor: '#bbdefb',
+              backgroundColor: '#B3E5FC', // Biru pastel untuk kartu
               boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
             }}
           >
@@ -59,7 +70,7 @@ const Dashboard = () => {
               title="Data Guru"
               titleTypographyProps={{ variant: 'h5', align: 'center' }}
               sx={{
-                backgroundColor: '#64b5f6',
+                backgroundColor: '#81D4FA', // Biru soft untuk header kartu
                 color: 'white',
                 display: 'flex',
                 alignItems: 'center',
@@ -69,13 +80,13 @@ const Dashboard = () => {
               avatar={<PersonOutline style={{ color: 'white', fontSize: '40px' }} />}
             />
             <CardContent>
-              <Typography variant="body1" gutterBottom align="center">
+              <Typography variant="body1" gutterBottom align="center" sx={{ color: '#0288D1' }}>
                 Total Guru: {gurus.length}
               </Typography>
               <Box display="flex" justifyContent="center">
                 <Button
                   variant="contained"
-                  sx={{ backgroundColor: '#1e88e5', color: 'white' }}
+                  sx={{ backgroundColor: '#0288D1', color: 'white' }}
                   onClick={handleAddGuru}
                 >
                   Data Guru
@@ -85,11 +96,12 @@ const Dashboard = () => {
           </Card>
         </Grid>
 
+        {/* Card for Data Siswa */}
         <Grid item xs={12} sm={6} md={4}>
           <Card
             sx={{
               minHeight: '200px',
-              backgroundColor: '#bbdefb',
+              backgroundColor: '#B3E5FC', // Biru pastel untuk kartu
               boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
             }}
           >
@@ -97,7 +109,7 @@ const Dashboard = () => {
               title="Data Siswa"
               titleTypographyProps={{ variant: 'h5', align: 'center' }}
               sx={{
-                backgroundColor: '#64b5f6',
+                backgroundColor: '#81D4FA', // Biru soft untuk header kartu
                 color: 'white',
                 display: 'flex',
                 alignItems: 'center',
@@ -107,13 +119,13 @@ const Dashboard = () => {
               avatar={<GroupOutlined style={{ color: 'white', fontSize: '40px' }} />}
             />
             <CardContent>
-              <Typography variant="body1" gutterBottom align="center">
+              <Typography variant="body1" gutterBottom align="center" sx={{ color: '#0288D1' }}>
                 Total Siswa: {murids.length}
               </Typography>
               <Box display="flex" justifyContent="center">
                 <Button
                   variant="contained"
-                  sx={{ backgroundColor: '#1e88e5', color: 'white' }}
+                  sx={{ backgroundColor: '#0288D1', color: 'white' }}
                   onClick={handleAddMurid}
                 >
                   Data Siswa

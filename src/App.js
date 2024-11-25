@@ -1,30 +1,31 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import Dashboard from './Page/Dashboard';
-import DataSiswa from './Page/DataSiswa';
 import DataGuru from './Page/DataGuru';
+import DataSiswa from './Page/DataSiswa';
+
 import TambahGuru from './Page/TambahGuru';
-import TambahMurid from './Page/TambahSiswa';
+import TambahSiswa from './Page/TambahSiswa';
 import EditGuru from './Page/EditGuru';
-import EditMurid from './Page/EditSiswa';
+import EditSiswa from './Page/EditSiswa';
 
 function App() {
   return (
     <Router>
-      <div className="App">
+      <div className="app-container">
         <Sidebar />
-        <div className="content">
+        <main>
           <Routes>
             <Route path="/" element={<Dashboard />} />
-            <Route path="/siswa" element={<DataSiswa />} />
             <Route path="/guru" element={<DataGuru />} />
-            <Route path="/tambahguru" element={<TambahGuru />} />
-            <Route path="/tambahsiswa" element={<TambahMurid />} />
-            <Route path="/editguru/:id" element={<EditGuru />} />
-            <Route path="/editsiswa/:id" element={<EditMurid />} />
+            <Route path="/siswa" element={<DataSiswa />} />
+            <Route path="/TambahGuru" element={<TambahGuru />} />
+            <Route path="/TambahSiswa" element={<TambahSiswa />} />
+            <Route path="/EditGuru/:id" caseSensitive={false} element={<EditGuru />} />
+            <Route path="/EditSiswa/:id" caseSensitive={false} element={<EditSiswa />} />
           </Routes>
-        </div>
+        </main>
       </div>
     </Router>
   );

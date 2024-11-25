@@ -18,7 +18,7 @@
     },
     {
       "nama": "Mark Lee",
-      "mapel": "Bahasa Jawa",
+      "mapel": "Bahasa Inggris",
       "nik": "43645325",
       "jeniskelamin": "Laki-laki",
       "jabatan": "Guru Honorer",
@@ -47,11 +47,19 @@
       "nik": "43645646",
       "jeniskelamin": "Perempuan",
       "jabatan": "Guru Tetap"
+    },
+    {
+      "id": "c6f2",
+      "nama": "Lee Heeseung",
+      "mapel": "PAIBP",
+      "nik": "346356354",
+      "jeniskelamin": "Laki-Laki",
+      "jabatan": "Guru Honorer"
     }
   ],
   "murids": [
     {
-      "id": "2",
+      "id": "1",
       "nama": "Faiqah Nisa Azzahra",
       "kelas": "X",
       "jurusan": "TKJ",
@@ -59,7 +67,7 @@
       "asalSekolah": "MTS Boyolali"
     },
     {
-      "id": "3",
+      "id": "2",
       "nama": "Mihnatun Naja Fuadah",
       "kelas": "X",
       "jurusan": "TKJ",
@@ -72,10 +80,10 @@
       "jurusan": "TKJ",
       "nisn": "67854788",
       "asalSekolah": "MTS Gaji",
-      "id": "4"
+      "id": "3"
     },
     {
-      "id": "aa68",
+      "id": "4",
       "nama": "Rodiyatul Khofifah",
       "kelas": "X",
       "jurusan": "TKJ",
@@ -83,7 +91,7 @@
       "asalSekolah": "SMP Karangasem"
     },
     {
-      "id": "b69c",
+      "id": "5",
       "nama": "Devi Mahya Kumila",
       "kelas": "X",
       "jurusan": "TKJ",
@@ -91,12 +99,20 @@
       "asalSekolah": "MTS Grobogan"
     },
     {
-      "id": "11ca",
+      "id": "6",
       "nama": "Zulfa Azzahra",
       "kelas": "X",
       "jurusan": "IPA",
       "nisn": "456747474",
       "asalSekolah": "SMP Karangasem"
+    },
+    {
+      "nama": "Farach Lailil Fitroh",
+      "kelas": "x",
+      "jurusan": "IPS",
+      "nisn": "453463",
+      "asalSekolah": "SMP Karangasem",
+      "id": "7"
     }
   ]
 }

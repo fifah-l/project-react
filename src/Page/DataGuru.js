@@ -10,13 +10,14 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Sidebar from "../components/Sidebar";
 import Swal from 'sweetalert2';
-import { Button, Tooltip, IconButton } from '@mui/material';
+import { Button, Tooltip, IconButton, TextField } from '@mui/material';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 
 export default function Dashboard() {
   const [gurus, setGurus] = useState([]);
+  const [searchQuery, setSearchQuery] = useState('');  // State untuk pencarian
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -36,8 +37,8 @@ export default function Dashboard() {
   const handleEdit = (id) => {
     navigate(`/EditGuru/${id}`); 
   };
-  
 
+  
   const Delete = (id) => {
     Swal.fire({
       title: 'Apakah Anda yakin?',
@@ -64,8 +65,15 @@ export default function Dashboard() {
     });
   };
 
+  // Fungsi untuk memfilter data guru berdasarkan pencarian
+  const filteredGurus = gurus.filter(guru => 
+    guru.nama.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    guru.mapel.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    guru.nik.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
-    <div style={{ backgroundColor: '#B3E5FC', minHeight: '100vh', padding: '20px', marginLeft: '280px' }}>
+    <div style={{ backgroundColor: '#B3E5FC', minHeight: '100vh', padding: '20px', }}>
       <Sidebar />
       <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
         <Button
@@ -77,11 +85,27 @@ export default function Dashboard() {
             backgroundColor: '#00796b', 
             '&:hover': { backgroundColor: '#004d40' }, 
           }}
-          
+
         >
           Tambah Guru
         </Button>
       </div>
+
+      {/* Kolom Pencarian */}
+      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
+        <TextField
+          label="Cari Guru"
+          variant="outlined"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          sx={{
+            width: '300px',
+            backgroundColor: '#fff',
+            borderRadius: '8px',
+          }}
+        />
+      </div>
+
       <TableContainer component={Paper} sx={{ boxShadow: 3, borderRadius: 2 }}>
         <Table
           sx={{
@@ -116,7 +140,7 @@ export default function Dashboard() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {gurus.map((guru, index) => (
+            {filteredGurus.map((guru, index) => (
               <TableRow
                 key={guru.id}
                 sx={{
