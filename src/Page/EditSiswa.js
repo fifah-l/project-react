@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
-import { TextField, Button, Typography, Container, } from '@mui/material';
+import { TextField, Button, Typography, Container, Box } from '@mui/material';
 import Swal from 'sweetalert2';  // Import SweetAlert
 
 export default function EditData() {
@@ -61,12 +61,22 @@ export default function EditData() {
   };
 
   return (
-    <Container maxWidth="sm" sx={{ mt: 5 }}>
-      <Typography variant="h4" gutterBottom align="center" color="primary">
+    <Container maxWidth="sm" sx={{ mt: 5, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <Typography variant="h4" gutterBottom align="center" sx={{ color: '#1976d2', fontWeight: 'bold' }}>
         Ubah Data Murid
       </Typography>
 
-      <form onSubmit={handleSubmit}>
+      <Box
+        component="form"
+        onSubmit={handleSubmit}
+        sx={{
+          width: '100%',
+          backgroundColor: '#f0f4f8',
+          padding: 3,
+          borderRadius: '8px',
+          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
+        }}
+      >
         <TextField
           fullWidth
           label="Nama"
@@ -75,6 +85,7 @@ export default function EditData() {
           onChange={(e) => setNama(e.target.value)}  
           margin="normal"
           variant="outlined"
+          sx={{ mb: 2 }}
         />
         <TextField
           fullWidth
@@ -84,6 +95,7 @@ export default function EditData() {
           onChange={(e) => setKelas(e.target.value)}  
           margin="normal"
           variant="outlined"
+          sx={{ mb: 2 }}
         />
         <TextField
           fullWidth
@@ -93,6 +105,7 @@ export default function EditData() {
           onChange={(e) => setJurusan(e.target.value)}  
           margin="normal"
           variant="outlined"
+          sx={{ mb: 2 }}
         />
 
         <TextField
@@ -103,32 +116,41 @@ export default function EditData() {
           onChange={(e) => setNisn(e.target.value)}  
           margin="normal"
           variant="outlined"
+          sx={{ mb: 2 }}
         />
 
         <TextField
           fullWidth
-          label="AsalSekolah"
+          label="Asal Sekolah"
           name="asalsekolah"
           value={asalSekolah}  // Menghubungkan dengan state Asal Sekolah
           onChange={(e) => setAsalSekolah(e.target.value)}  
           margin="normal"
           variant="outlined"
+          sx={{ mb: 3 }}
         />
-
-        
 
         <Button
           type="submit"
           variant="contained"
           color="primary"
-          sx={{ mt: 2, width: '100%' }}
+          sx={{
+            width: '100%',
+            padding: '12px 0',
+            borderRadius: '8px',
+            fontWeight: 'bold',
+            '&:hover': {
+              backgroundColor: '#1565c0',
+              boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.2)',
+            },
+          }}
         >
           Simpan Perubahan
         </Button>
-      </form>
+      </Box>
 
-      <Typography variant="body1" align="center" sx={{ mt: 2 }}>
-        Edit data murid
+      <Typography variant="body1" align="center" sx={{ mt: 2, color: '#757575' }}>
+        Pastikan data yang dimasukkan sudah benar.
       </Typography>
     </Container>
   );

@@ -10,7 +10,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Sidebar from "../components/Sidebar";
 import Swal from 'sweetalert2';
-import { Button, Tooltip, IconButton } from '@mui/material';
+import { Button, Tooltip, IconButton, Grid } from '@mui/material';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
@@ -64,24 +64,31 @@ export default function Dashboard() {
   };
 
   return (
-    <div style={{ backgroundColor: '#B3E5FC', minHeight: '100vh', padding: '20px', marginLeft: '265px' }}>
+    <div style={{ backgroundColor: '#B3E5FC', minHeight: '100vh', padding: '20px', marginLeft: '280px' }}>
       <Sidebar />
-      <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '20px' }}>
-        <Button
-          variant="contained"
-          color="primary"
-          startIcon={<AddCircleOutlineIcon />}
-          onClick={handleAdd}
-          sx={{ backgroundColor: '#00796b', '&:hover': { backgroundColor: '#004d40' } }}
-        >
-          Tambah
-        </Button>
-      </div>
+      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
+          <Button
+            variant="contained"
+            color="primary"
+            startIcon={<AddCircleOutlineIcon />}
+            onClick={handleAdd}
+            sx={{
+              backgroundColor: '#00796b', 
+              '&:hover': { backgroundColor: '#004d40' }, 
+            }}
+          >
+            Tambah Siswa
+          </Button>
+          </div>
+
       <TableContainer component={Paper} sx={{ boxShadow: 3, borderRadius: 2 }}>
         <Table
           sx={{
             minWidth: 500,
             backgroundColor: '#80C7FF',
+            '& .MuiTableCell-root': {
+              padding: '12px',
+            },
           }}
           aria-label="simple table"
         >

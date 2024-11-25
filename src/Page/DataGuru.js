@@ -65,17 +65,21 @@ export default function Dashboard() {
   };
 
   return (
-    <div style={{ backgroundColor: '#B3E5FC', minHeight: '100vh', padding: '20px', marginLeft: '265px' }}>
+    <div style={{ backgroundColor: '#B3E5FC', minHeight: '100vh', padding: '20px', marginLeft: '280px' }}>
       <Sidebar />
-      <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '20px' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
         <Button
           variant="contained"
           color="primary"
           startIcon={<AddCircleOutlineIcon />}
           onClick={handleAdd}
-          sx={{ backgroundColor: '#00796b', '&:hover': { backgroundColor: '#004d40' } }}
+          sx={{
+            backgroundColor: '#00796b', 
+            '&:hover': { backgroundColor: '#004d40' }, 
+          }}
+          
         >
-          Tambah
+          Tambah Guru
         </Button>
       </div>
       <TableContainer component={Paper} sx={{ boxShadow: 3, borderRadius: 2 }}>
@@ -101,7 +105,7 @@ export default function Dashboard() {
                 NIK
               </TableCell>
               <TableCell align="center" sx={{ fontWeight: 'bold', fontSize: '1.1rem' }}>
-                Gender
+                Jenis Kelamin
               </TableCell>
               <TableCell align="center" sx={{ fontWeight: 'bold', fontSize: '1.1rem' }}>
                 Jabatan
@@ -133,7 +137,7 @@ export default function Dashboard() {
                   {guru.nik}
                 </TableCell>
                 <TableCell align="center" sx={{ color: '#000' }}>
-                  {guru.gender}
+                  {guru.jeniskelamin}
                 </TableCell>
                 <TableCell align="center" sx={{ color: '#000' }}>
                   {guru.jabatan}

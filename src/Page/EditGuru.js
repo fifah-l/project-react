@@ -7,7 +7,7 @@ export default function EditGuru() {
   const [nama, setNama] = useState('');
   const [mapel, setMapel] = useState('');
   const [nik, setNik] = useState('');
-  const [gender, setGender] = useState('');
+  const [jeniskelamin, setJenisKelamin] = useState('');
   const [jabatan, setJabatan] = useState('');
   const [error, setError] = useState(null);
 
@@ -23,7 +23,7 @@ export default function EditGuru() {
         setNama(guru.nama);
         setMapel(guru.mapel);
         setNik(guru.nik);
-        setGender(guru.gender);
+        setJenisKelamin(guru.jeniskelamin);
         setJabatan(guru.jabatan);
       })
       .catch((error) => {
@@ -39,14 +39,14 @@ export default function EditGuru() {
       nama,
       mapel,
       nik,
-      gender,
+      jeniskelamin,
       jabatan,
     };
 
     try {
       await axios.put(`http://localhost:3030/gurus/${id}`, updatedGuru);
       alert('Data guru berhasil diubah!');
-      navigate('/'); // Redirect ke dashboard setelah berhasil
+      navigate('/guru'); // Redirect ke dashboard setelah berhasil
     } catch (error) {
       console.error('Error updating guru:', error);
       setError('Gagal mengubah data guru.');
@@ -56,25 +56,30 @@ export default function EditGuru() {
   return (
     <Box
       sx={{
-        padding: '20px',
-        backgroundColor: '#f3f4f6',
+        padding: '30px',
+        backgroundColor: '#e3f2fd',
         margin: 'auto',
-        maxWidth: '600px',
-        borderRadius: '8px',
-        boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
+        maxWidth: '700px',
+        borderRadius: '10px',
+        boxShadow: '0px 10px 30px rgba(0, 0, 0, 0.1)',
+        textAlign: 'center',
       }}
     >
       <Typography
         variant="h4"
         gutterBottom
-        align="center"
-        sx={{ color: '#1976d2', fontWeight: 'bold', marginBottom: '20px' }}
+        sx={{
+          color: '#1976d2',
+          fontWeight: 'bold',
+          marginBottom: '30px',
+          fontSize: '2rem',
+        }}
       >
         Edit Data Guru
       </Typography>
 
       {error && (
-        <Typography variant="body2" align="center" color="error" gutterBottom>
+        <Typography variant="body2" color="error" gutterBottom sx={{ marginBottom: '20px' }}>
           {error}
         </Typography>
       )}
@@ -88,6 +93,11 @@ export default function EditGuru() {
           value={nama}
           onChange={(e) => setNama(e.target.value)}
           required
+          sx={{
+            '& .MuiOutlinedInput-root': {
+              borderRadius: '8px',
+            },
+          }}
         />
         <TextField
           label="Mata Pelajaran"
@@ -97,6 +107,11 @@ export default function EditGuru() {
           value={mapel}
           onChange={(e) => setMapel(e.target.value)}
           required
+          sx={{
+            '& .MuiOutlinedInput-root': {
+              borderRadius: '8px',
+            },
+          }}
         />
         <TextField
           label="NIK"
@@ -106,14 +121,24 @@ export default function EditGuru() {
           value={nik}
           onChange={(e) => setNik(e.target.value)}
           required
+          sx={{
+            '& .MuiOutlinedInput-root': {
+              borderRadius: '8px',
+            },
+          }}
         />
 
-        <FormControl fullWidth margin="normal" required>
-          <InputLabel>Gender</InputLabel>
+        <FormControl fullWidth margin="normal" required sx={{ '& .MuiOutlinedInput-root': { borderRadius: '8px' } }}>
+          <InputLabel>Jenis Kelamin</InputLabel>
           <Select
-            value={gender}
-            onChange={(e) => setGender(e.target.value)}
-            label="Gender"
+            value={jeniskelamin}
+            onChange={(e) => setJenisKelamin(e.target.value)}
+            label="JenisKelamin"
+            sx={{
+              '& .MuiOutlinedInput-root': {
+                borderRadius: '8px',
+              },
+            }}
           >
             <MenuItem value="Laki-laki">Laki-laki</MenuItem>
             <MenuItem value="Perempuan">Perempuan</MenuItem>
@@ -128,6 +153,11 @@ export default function EditGuru() {
           value={jabatan}
           onChange={(e) => setJabatan(e.target.value)}
           required
+          sx={{
+            '& .MuiOutlinedInput-root': {
+              borderRadius: '8px',
+            },
+          }}
         />
 
         <Button
@@ -138,12 +168,18 @@ export default function EditGuru() {
           sx={{
             marginTop: '20px',
             backgroundColor: '#1976d2',
-            '&:hover': { backgroundColor: '#1565c0' },
+            '&:hover': {
+              backgroundColor: '#1565c0',
+              boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)',
+            },
+            borderRadius: '8px',
+            padding: '12px 0',
           }}
         >
           Update Guru
         </Button>
       </form>
     </Box>
+
   );
 }

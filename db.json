@@ -4,23 +4,23 @@
       "nama": "Na Jemin",
       "mapel": "PJOK",
       "nik": "8753476",
-      "gender": "Laki-laki",
+      "jeniskelamin": "Laki-laki",
       "jabatan": "Kepala Sekolah",
       "id": "1"
     },
     {
-      "id": "2",
       "nama": "Lee Jeno ",
       "mapel": "Bahasa Indonesia",
       "nik": "346546543",
-      "gender": "Laki-Laki",
-      "jabatan": "Guru Tetap"
+      "jeniskelamin": "Laki-laki",
+      "jabatan": "Guru Tetap",
+      "id": "2"
     },
     {
       "nama": "Mark Lee",
       "mapel": "Bahasa Jawa",
       "nik": "43645325",
-      "gender": "Laki-laki",
+      "jeniskelamin": "Laki-laki",
       "jabatan": "Guru Honorer",
       "id": "3"
     },
@@ -28,25 +28,25 @@
       "nama": "Kim Minjeong",
       "mapel": "Bahasa Korea",
       "nik": "879795576",
-      "gender": "Perempuan",
+      "jeniskelamin": "Perempuan",
       "jabatan": "Guru Honorer",
       "id": "4"
     },
     {
-      "id": "5",
       "nama": "Yoo Jimin ",
       "mapel": "Seni Budaya",
       "nik": "457456784",
-      "gender": "Perempuan",
-      "jabatan": "Guru Tetap"
+      "jeniskelamin": "Perempuan",
+      "jabatan": "Guru Tetap",
+      "id": "5"
     },
     {
-      "id": "6",
-      "nama": "Ning Ning",
-      "mapel": "Bahasa Mandarin",
-      "nik": "83764876",
-      "gender": "Perempuan",
-      "jabatan": "Guru Honorer"
+      "id": "1ecf",
+      "nama": "Ning-Ning",
+      "mapel": "Prakarya",
+      "nik": "43645646",
+      "jeniskelamin": "Perempuan",
+      "jabatan": "Guru Tetap"
     }
   ],
   "murids": [
@@ -75,14 +75,6 @@
       "id": "4"
     },
     {
-      "id": "6",
-      "nama": "Zulfa Azzahra",
-      "kelas": "X",
-      "jurusan": "IPA",
-      "nisn": "23654726",
-      "asalSekolah": "SMP Karangasem"
-    },
-    {
       "id": "aa68",
       "nama": "Rodiyatul Khofifah",
       "kelas": "X",
@@ -97,6 +89,14 @@
       "jurusan": "TKJ",
       "nisn": "43645646",
       "asalSekolah": "MTS Grobogan"
+    },
+    {
+      "id": "11ca",
+      "nama": "Zulfa Azzahra",
+      "kelas": "X",
+      "jurusan": "IPA",
+      "nisn": "456747474",
+      "asalSekolah": "SMP Karangasem"
     }
   ]
 }

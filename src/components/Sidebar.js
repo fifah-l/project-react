@@ -1,15 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './sidebar.css';
-import SchoolIcon from '@mui/icons-material/School'; // Ikon untuk Data Guru
-import ClassIcon from '@mui/icons-material/Class';  // Ikon untuk Data Siswa
-import HomeIcon from '@mui/icons-material/Home';    // Ikon untuk Home
+import SchoolIcon from '@mui/icons-material/School';
+import ClassIcon from '@mui/icons-material/Class';
+import HomeIcon from '@mui/icons-material/Home';
+import MenuIcon from '@mui/icons-material/Menu';
 
 const Sidebar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);
+    console.log('Sidebar is now:', !isOpen ? 'Open' : 'Closed');
+  };
+  
+
   return (
-    <div className="sidebar">
+    <div className={`sidebar ${isOpen ? 'open' : ''}`}>
       <div className="sidebar-header">
         <h5>Menu Item</h5>
+        <MenuIcon className="sidebar-toggle" onClick={toggleSidebar} />
       </div>
       <nav className="sidebar-nav">
         <ul>

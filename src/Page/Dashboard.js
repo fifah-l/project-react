@@ -36,7 +36,7 @@ const Dashboard = () => {
   };
 
   return (
-    <div style={{ padding: '20px', backgroundColor: '#e3f2fd', marginLeft: '265px', minHeight: '100vh' }}>
+    <div style={{ padding: '20px', backgroundColor: '#e3f2fd', marginLeft: '280px', minHeight: '100vh' }}>
       <Typography
         variant="h4"
         gutterBottom
@@ -47,7 +47,7 @@ const Dashboard = () => {
       </Typography>
 
       <Grid container spacing={4}>
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} sm={6} md={4}>
           <Card
             sx={{
               minHeight: '200px',
@@ -85,7 +85,7 @@ const Dashboard = () => {
           </Card>
         </Grid>
 
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} sm={6} md={4}>
           <Card
             sx={{
               minHeight: '200px',
